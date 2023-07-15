@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sand/controllers/auth_controller.dart';
 import 'package:sand/views/resources/pallete.dart';
+import 'package:sand/views/screens/homepage.dart';
 import 'package:sand/views/screens/loginpage.dart';
 
 void main() async {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
 
-      ),home: LoginPage(),
+      ),home: HomePage(),
     );
   }
 }

@@ -72,6 +72,7 @@ flutter:
   assets:
     - assets/login.svg
     - assets/google.svg
+    - assets/hourglass.riv
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
