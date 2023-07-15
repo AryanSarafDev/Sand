@@ -20,3 +20,20 @@ class LoginButton extends StatelessWidget {
     );
   }
 }
+class GoogleLogin extends StatelessWidget {
+  const GoogleLogin({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SizedBox(height: 70,
+        child: OutlinedButton.icon(
+            onPressed: () {},
+          icon: ,
+            style: OutlinedButton.styleFrom(side: BorderSide(color: Pallete.blue1,width: 5))),
+      ),
+    );
+  }
+}
+
