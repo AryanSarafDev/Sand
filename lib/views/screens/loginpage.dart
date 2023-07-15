@@ -12,40 +12,46 @@ class LoginPage extends StatelessWidget {
     TextEditingController _email = TextEditingController();
     TextEditingController _pass = TextEditingController();
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: SizedBox(
-                height: 300,
-                width: 300,
-                child: SvgPicture.asset("assets/login.svg")),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomTextField(
-                fontSize: 20,
-                fieldWidth: 200,
-                hintText: "Enter e-mail",
-                controller: _email,
-                inputType: TextInputType.emailAddress,
-                backgroundColor: Pallete.blue1),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomTextField(
-                fontSize: 20,
-                fieldWidth: 200,
-                hintText: "Enter Password",
-                controller: _pass,
-                inputType: TextInputType.visiblePassword,
-                backgroundColor: Pallete.blue1)
-          ),
-          LoginButton()
-
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: SizedBox(
+                  height: 300,
+                  width: 300,
+                  child: SvgPicture.asset("assets/login.svg")),
+            ),
+            GoogleLogin(),
+            Center(
+                child: Text(
+              "or",
+              style: TextStyle(color: Pallete.opp, fontSize: 20),
+            )),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomTextField(
+                  fontSize: 20,
+                  fieldWidth: 200,
+                  hintText: "Enter e-mail",
+                  controller: _email,
+                  inputType: TextInputType.emailAddress,
+                  backgroundColor: Pallete.blue1),
+            ),
+            Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomTextField(
+                    fontSize: 20,
+                    fieldWidth: 200,
+                    hintText: "Enter Password",
+                    controller: _pass,
+                    inputType: TextInputType.visiblePassword,
+                    backgroundColor: Pallete.blue1)),
+            LoginButton(),
+          ],
+        ),
       ),
     );
   }
