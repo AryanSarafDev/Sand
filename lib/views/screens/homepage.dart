@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
+import 'package:sand/views/resources/homescreenwidgets/statscard.dart';
+import 'package:sand/views/resources/homescreenwidgets/taskslist.dart';
+import 'package:sand/views/resources/homescreenwidgets/timerbar.dart';
+import 'package:sand/views/resources/homescreenwidgets/topbanner.dart';
 import 'package:sand/views/resources/pallete.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -10,8 +16,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(floatingActionButton: FloatingActionButton(onPressed: (){},backgroundColor: Pallete.red1,child: Icon(Icons.add,color: Pallete.backgroundColor,),),floatingActionButtonLocation: FloatingActionButtonLocation.endContained,bottomNavigationBar: BottomAppBar(
-      color: Pallete.opp,
-    ),);
+    return Scaffold(
+      bottomNavigationBar: BottomAppBar(
+        color: Pallete.opp,
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [TopBanner(),StatsCard(), TimerBar(), TasksList()],
+        ),
+      ),
+    );
   }
 }
