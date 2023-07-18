@@ -44,6 +44,7 @@ dependencies:
   cloud_firestore: ^4.8.3
   flutter_svg: ^2.0.7
   rive: ^0.7.16
+  image_picker: ^1.0.1
 
 dev_dependencies:
   flutter_test:

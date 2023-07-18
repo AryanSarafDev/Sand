@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sand/views/resources/commonwidgets.dart';
+import 'package:sand/views/resources/constants.dart';
 import 'package:sand/views/resources/loginwidgets.dart';
 import 'package:sand/views/resources/pallete.dart';
 
@@ -49,7 +50,8 @@ class LoginPage extends StatelessWidget {
                     controller: _pass,
                     inputType: TextInputType.visiblePassword,
                     backgroundColor: Pallete.blue1)),
-            LoginButton(),
+            LoginButton(text: "Log-in!",func: ()=> authController.loginUser(_email.text, _pass.text),),
+            Center(child: sendToRegister())
           ],
         ),
       ),

@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:sand/views/resources/pallete.dart';
+import 'package:sand/views/screens/registerpage.dart';
 
 class LoginButton extends StatelessWidget {
-  const LoginButton({super.key});
+  final String text;
+  var func;
+  LoginButton({super.key, required this.text, required this.func});
 
   @override
   Widget build(BuildContext context) {
@@ -12,13 +17,14 @@ class LoginButton extends StatelessWidget {
       child: SizedBox(
         height: 70,
         child: OutlinedButton(
-            onPressed: () {},
-            child: Text(
-              "Log-in",
-              style: TextStyle(color: Pallete.blue1,fontSize: 25),
-            ),
-            style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Pallete.blue1, width: 5)),),
+          onPressed: func,
+          child: Text(
+            "$text",
+            style: TextStyle(color: Pallete.blue1, fontSize: 25),
+          ),
+          style: OutlinedButton.styleFrom(
+              side: BorderSide(color: Pallete.blue1, width: 5)),
+        ),
       ),
     );
   }
@@ -45,10 +51,25 @@ class GoogleLogin extends StatelessWidget {
               side: BorderSide(color: Pallete.blue1, width: 5)),
           label: Text(
             "Sign-in with Google!",
-            style: TextStyle(color: Pallete.blue1,fontSize: 20),
+            style: TextStyle(color: Pallete.blue1, fontSize: 20),
           ),
         ),
       ),
     );
+  }
+}
+
+class sendToRegister extends StatelessWidget {
+  const sendToRegister({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    try {} catch (e, s) {
+      print(s);
+    }
+    return Row(children: [
+      Text("Dont have an account? "),
+      InkWell(child: Text("Sign-up!"), onTap: () => Get.to(RegisterPage()))
+    ]);
   }
 }

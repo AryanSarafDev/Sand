@@ -15,19 +15,21 @@ class _TasksListState extends State<TasksList> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Container(
-            height: 300,
-            width: 200,
-            decoration: BoxDecoration(
+      child: SingleChildScrollView(scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            Container(
+              height: 300,
+              width: 200,
+              decoration: BoxDecoration(
 
 
-                color: Pallete.brown1,
-                borderRadius: BorderRadius.circular(10)),
-          ),
-          SizedBox(height:190,width:190,child: SvgPicture.asset("assets/study.svg"),)
-        ],
+                  color: Pallete.brown1,
+                  borderRadius: BorderRadius.circular(10)),
+            ),
+            SizedBox(height:190,width:190,child: SvgPicture.asset("assets/study.svg"),)
+          ],
+        ),
       ),
     );
   }

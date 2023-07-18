@@ -1,5 +1,5 @@
 import 'package:isar/isar.dart';
-import 'package:sand/models/username.dart';
+import 'package:sand/models/localdb/username.dart';
 part 'tasks.g.dart';
 @Collection()
 class Tasks{

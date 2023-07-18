@@ -5,10 +5,13 @@ import 'package:sand/controllers/auth_controller.dart';
 import 'package:sand/views/resources/pallete.dart';
 import 'package:sand/views/screens/homepage.dart';
 import 'package:sand/views/screens/loginpage.dart';
+import 'package:sand/views/screens/registerpage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp().then((value) {
+    print("apple");
     Get.put(AuthController());
   });
   runApp(const MyApp());
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
 
-      ),home: HomePage(),
+      ),home: LoginPage(),
     );
   }
 }

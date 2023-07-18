@@ -2,8 +2,8 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:isar/isar.dart';
-import 'package:sand/models/tasks.dart';
-import 'package:sand/models/username.dart';
+import 'package:sand/models/localdb/tasks.dart';
+import 'package:sand/models/localdb/username.dart';
 class IsarDatabase
 {
   late Future<Isar> db;
