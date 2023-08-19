@@ -18,7 +18,6 @@ class AuthController extends GetxController {
 
   @override
   void onReady() {
-    // TODO: implement onReady
     super.onReady();
     _user = Rx<User?>(firebaseAuth.currentUser);
     _user.bindStream(firebaseAuth.authStateChanges());
@@ -26,6 +25,7 @@ class AuthController extends GetxController {
   }
 
   _setInitialScreen(User? user) {
+    print(user?.uid);
     if (user == null) {
       Get.offAll(() => LoginPage());
     } else {
@@ -73,7 +73,8 @@ class AuthController extends GetxController {
             email: email,
             pfp: downloadUrl,
             uid: firebaseAuth.currentUser!.uid,
-            username: username);
+            username: username,
+        tasks: []);
         await firestore
             .collection('users')
             .doc(cred.user!.uid)

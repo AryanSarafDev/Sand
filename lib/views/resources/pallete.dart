@@ -12,7 +12,6 @@ class Pallete {
   static const Color lblue1 = Color(0xFFe4dfe1);
   static const Color lblue2 = Color(0xFFacb0d6);
 
-
 }
 class PalleteDark {
   static const Color opp = Color(0xFFf9f6d2);

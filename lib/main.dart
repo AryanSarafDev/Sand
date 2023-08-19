@@ -7,12 +7,15 @@ import 'package:sand/views/screens/homepage.dart';
 import 'package:sand/views/screens/loginpage.dart';
 import 'package:sand/views/screens/registerpage.dart';
 
+import 'controllers/tasks_controller.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp().then((value) {
     print("apple");
     Get.put(AuthController());
+    Get.put(TasksController());
   });
   runApp(const MyApp());
 }
